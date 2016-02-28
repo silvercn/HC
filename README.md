@@ -28,6 +28,37 @@ Life HC RPG by Tonic is licensed under a [Creative Commons Attribution-NonCommer
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
+About Headless Client
+----------------------
+> Headless Client optimize +80% of arma3server.exe. He takes actually 100% of MySQL request and 80% of ServerSide's scripts.
+
+How to install it
+----------------------
+> Put in your config.cfg
+headlessClients[] = {IP¨of headless}; for exemple if you have your headless in the same computer  : headlessClients[] = {127.0.0.1};
+
+> life_hc.pbo need to be signed if verifysignature=2 !!!
+
+> My Start-HC.bat :
+
+```
+@echo off
+::timeout 20
+:: Modify your folders etc!
+set armapath="D:\SteamGames\steamapps\common\Arma 3"
+set armaparams=-client -connect=127.0.0.1 -port=2302 -password=dev -name=HC -profiles=HC -mod=@extDB2;@life_hc;
+set serverexe=arma3.exe
+echo.
+echo Restarting
+:: start the servers..
+cd /d %armapath%
+start "" %serverexe% %armaparams%
+exit
+```
+<br/>
+
+---------------------------
+
 [How to configure your server] (https://github.com/ArmaLife/Altis/wiki/Setup-Server)
 -------------------------------------
 You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
